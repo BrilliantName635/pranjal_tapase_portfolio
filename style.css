@@ -300,7 +300,7 @@ body {
     }
 
     .contact form button {
-        width: 50%; /* Full width button on smaller screens */
+        width: 70%; /* Full width button on smaller screens */
         align-self: center;
     }
 
