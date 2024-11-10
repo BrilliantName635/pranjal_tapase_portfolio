@@ -1,0 +1,527 @@
+/* Google Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    scroll-behavior: smooth;
+}
+
+/* Set higher z-index for navbar to stay on top */
+nav {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    background: #0f0f1a;
+    height: 80px;
+}
+
+nav.scrolled {
+    background-color: black !important;
+    transition: background-color 0.5s ease;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav ul.scrolled {
+    background-color: black !important;
+}
+
+a.active,
+a:hover {
+    background: #54575a;
+    transition: 0.5s;
+}
+
+.checkbtn {
+    font-size: 22px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+    background-color: transparent;
+}
+
+label.logo {
+    position: relative;
+    left: 20px;
+    line-height: 50px;
+    padding: 10px 60px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.logo img, .logo .logo-img {
+    background-color: transparent;
+    display: block;
+}
+
+#check {
+    display: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Home Section */
+.home {
+    position: relative;
+    height: 100vh;
+    background-color: #0f0f1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+#round {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Canvas behind other elements */
+}
+
+#text {
+    position: relative;
+    z-index: 2; /* Text above the canvas */
+    color: white;
+    font-size: 2em;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* About Section */
+.about {
+    min-height: 100vh;
+    padding: 20px 30px;
+    margin-left: 12%;
+    margin-top: 7%;
+    background-color: white;
+    color: black;
+    text-align: left;
+    font-size: 130%;
+
+}
+
+/* Projects Section */
+.projects {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: rgb(199, 167, 167);
+    color: black;
+    text-align: center;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #0077b5; /* LinkedIn blue */
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 40px;
+    width: 180px;
+    text-align: center;
+  }
+  
+  .linkedin-button img {
+    width: 20px;  /* Control the size of the LinkedIn logo */
+    height: 20px; /* Keep the aspect ratio square */
+    margin-right: 8px; /* Space between the image and text */
+  }
+  
+  .linkedin-button:hover {
+    background-color: #494993; /* Darker LinkedIn blue on hover */
+    color: white;
+  }
+  
+
+/* Contact Section */
+.contact {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    margin-top: 7%;
+}
+
+#contactform {
+    width: 100%;
+    max-width: 600px; /* Adjust max-width for responsiveness */
+    height: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+    /* Use static position for form on larger screens */
+    position: relative;
+    margin: 0 auto; /* Center the form */
+}
+
+/* Styling for the form itself */
+.contact form {
+    width: 100%;
+    max-width: 1000px; /* Make sure the form doesn’t stretch too wide */
+    color: #333;
+    font-weight: 500;
+    margin-top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling for input fields */
+.contact form .input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.contact form input {
+    width: 48%;
+    height: 55px;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styling for input focus state */
+.contact form input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Styling for the submit button */
+.contact form button {
+    display: inline-block;
+    color: #fff;
+    padding: 14px 32px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background: #333;
+    transition: background-color 0.3s ease;
+    width: 50%;
+    align-self: center;
+}
+
+/* Button hover effect */
+.contact form button:hover {
+    background-color: #464746;
+}
+
+/* Styling for the message textarea */
+#message {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s, box-shadow 0.3s ease;
+}
+
+/* Focus effect for the textarea */
+#message:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #contactform {
+        padding: 20px;
+    }
+
+    .contact form .input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact form input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .contact form button {
+        width: 50%; /* Full width button on smaller screens */
+        align-self: center;
+    }
+
+    #message {
+        width: 100%;
+    }
+}
+
+/* For larger screens (laptops/desktops) */
+@media (min-width: 1024px) {
+    .contact {
+        padding: 60px;
+    }
+
+    #contactform {
+        max-width: 700px; /* Larger max-width on big screens */
+    }
+
+    .contact form .input-container {
+        gap: 20px; /* Wider gap between inputs */
+    }
+
+    .contact form input {
+        width: 48%; /* Keep the 2-column layout */
+    }
+}
+
+
+
+
+/* Download CV Button */
+#CVButton{
+
+	display: inline-block;
+	color: #fff;
+	padding: 14px 40px;
+	border: none;
+	font-family: "Montserrat", sans-serif;
+	line-height: normal;
+	text-transform: uppercase;
+	border-radius: 50px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	background: #333;
+}
+
+/* Default (for screens larger than 1024px) */
+.about ul section {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align the content and skills side by side */
+}
+
+/* Center the About Me title */
+.about h2 {
+    text-align: left; /* Center the title */
+    width: 100%;
+    margin-bottom: 20px; /* Add space below the title */
+}
+
+/* Style for the aboutlist */
+#aboutlist {
+    width: 45%; /* Set width to 45% to leave space for skills section */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+#aboutlist li {
+    margin-bottom: 10px; /* Add spacing between the list items */
+}
+
+/* Style for the skills section */
+.skills {
+    width: 50%; /* Skills section will take up 50% of the space */
+    display: flex;
+    flex-direction: column; /* Align skills vertically */
+    gap: 20px;
+}
+
+/* For screens smaller than or equal to 1024px */
+@media (max-width: 1024px) {
+    .about {
+        flex-direction: column; /* Stack aboutlist and skills vertically */
+        align-items: center; /* Center the sections */
+        padding: 20px;
+        margin-left: 0%;
+        margin-top: 5%;
+        font-size: 110%;
+    }
+
+    .about h2{
+        align-self: center; /* Center the title */
+    }
+
+    /* Make both sections take up full width on smaller devices */
+    #aboutlist, .skills {
+        width: 100%; /* Full width */
+    }
+
+    /* Add some margin between the list and skills section */
+    .skills {
+        margin-top: 30px; /* Space between aboutlist and skills */
+    }
+
+    /* Add margin for the Download CV button */
+    #CVButton {
+        margin-top: 20px;
+        text-align: center; /* Center the button */
+    }
+}
+
+
+.single-progress-item {
+	margin-bottom: 35px;
+	position: relative;
+}
+.single-progress-item p {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-family: "Montserrat", sans-serif;
+	font-weight: bold;
+	letter-spacing: 0;
+	margin-bottom: 0px;
+	color: #333;
+}
+.progress-bar-style {
+	display: flex;
+	height: 4px;
+	position: relative;
+	width: 100%;
+	border-radius: 25px;
+}
+
+.bar-inner {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border-radius: 25px;
+	background: #333;
+}
+.bar-inner span {
+	position: absolute;
+	right: 0;
+	font-weight: bold;
+	top: -18px;
+	font-size: 10px;
+	width: 35px;
+	height: 35px;
+	padding-top: 11px;
+	letter-spacing: 0px;
+	background: #fff;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 10px rgba(45, 45, 45, 0.2);
+	        box-shadow: 0 0 10px rgba(45, 45, 45, 0.2);
+}
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1050px) {
+    label.logo {
+        padding-left: 10px;
+        margin-top: 4%;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+
+}
+
+@media (max-width: 890px) {
+    .checkbtn {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 230px;
+        background: #0f0f1a;
+        top: -300px;
+        left: 0;
+        text-align: left;
+        transition: top 0.5s ease;
+    }
+
+    nav ul::before {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 1px;
+        background-color: #ffffff;
+        margin: 10px auto;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked ~ ul {
+        top: 80px;
+    }
+    #skills{
+        display: block;
+        block-size: row;
+    }
+}
