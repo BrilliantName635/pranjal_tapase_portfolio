@@ -28,51 +28,84 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-  <div id="home" class="hero-section">
+  <div id="home">
+    <div class="cursor"></div>
+    <script src="Javascripts/ParticleEffect.js"></script>
     <div class="content">
       <section class="home" id="home">
         <canvas id="round"></canvas>
         <h2 id="text"></h2>
       </section>
     </div>
-    <script src="script2.js"></script>
   </div>
 
   <section class="about" id="about">
     <h2>About Me</h2>
-    <ul id="aboutlist">
-        <li>Hi I'm Pranjal, a basic Web Designer. My end career goal is to become an airline pilot. Alongside my pursuit of this goal, I've built a strong foundation in technology and engineering, working on several independent projects.</li>
-        <li>As I work towards a career in aviation, I am constantly pushing myself to learn something new.</li>
-    </ul>
-    
-    <section class="skills">
-        <div class="single-progress-item">
-            <p style="color: #1f66c9">Web Design</p>
-            <div class="progress-bar-style" data-progress="60"><div class="bar-inner" style="width:60%"><span>60%</span></div></div>
+    <div class="aboutsection">
+      <ul id="aboutlist">
+          <li>Hi I'm Pranjal, a basic Web Designer. Currently I am in Year 12 studying Mathematics, Physics, Engineering, and Economics.</li> <br>
+          <li> My end career goal is to become an airline pilot. </li> <br>
+          <li>Alongside my pursuit of this goal, I've built a strong foundation in technology and engineering, working on several independent projects.</li> <br>
+          <li>Additionally I have a high interest in UI Design and Website Development.</li> <br>
+          <li>Feel free to explore this website and what projects that I have completed or contact me.</li>
+     
+        </ul>
+        <br>
+      <section class="skills">
+          <div class="single-progress-item">
+              <p style="color: #1f66c9">Web Design</p>
+              <div class="progress-bar-style" data-progress="60"><div class="bar-inner" style="width:60%"><span>60%</span></div></div>
+          </div>
+          <div class="single-progress-item">
+              <p style="color: #c82b2b">3D Modelling</p>
+              <div class="progress-bar-style" data-progress="70"><div class="bar-inner" style="width:70%"><span>70%</span></div></div>
+          </div>
+          <div class="single-progress-item">
+            <p style="color: #26606e">UI/UX Design</p>
+            <div class="progress-bar-style" data-progress="50"><div class="bar-inner" style="width:50%"><span>50%</span></div></div>
         </div>
-        <div class="single-progress-item">
-            <p style="color: #c82b2b">3D Modelling</p>
-            <div class="progress-bar-style" data-progress="70"><div class="bar-inner" style="width:70%"><span>70%</span></div></div>
-        </div>
-        <div class="single-progress-item">
-            <p style="color: #1fc91f">HTML & CSS</p>
-            <div class="progress-bar-style" data-progress="70"><div class="bar-inner" style="width:70%"><span>70%</span></div></div>
-        </div>
-        <div class="single-progress-item">
-            <p style="color: #c91f6e">Microsoft Office</p>
-            <div class="progress-bar-style" data-progress="90"><div class="bar-inner" style="width:90%"><span>90%</span></div></div>
-        </div>
-    </section>
-
-    <a id="CVButton" href="" target="_blank">Download CV</a>
-</section>
-
-    
+          <div class="single-progress-item">
+              <p style="color: #1fc91f">HTML & CSS</p>
+              <div class="progress-bar-style" data-progress="70"><div class="bar-inner" style="width:70%"><span>70%</span></div></div>
+          </div>
+          <div class="single-progress-item">
+              <p style="color: #c91f6e">Microsoft Office</p>
+              <div class="progress-bar-style" data-progress="90"><div class="bar-inner" style="width:90%"><span>90%</span></div></div>
+          </div>
+      </section>
+    </div>
+    <a id="CVButton" href="CV - Pranjal T.pdf" target="_blank">Download CV</a>
   </section>
+
+
   <section class="projects" id="projects">
     <h2>Projects</h2>
-    <p>This section contains information about projects.</p>
+    <!--
+    <section class="project-container">
+      <div class="slider-wrapper">
+          <div class="slider">
+              <img id="slide-1" src="a380.jpg" alt="Airbus">
+              <img id="slide-2" src="a321.jpg" alt="Airbus" />
+              <img id="slide-3" src="a350.jpeg" alt="Airbus" />
+              <img id="slide-4" src="787.jpeg" alt="Boeing" />
+              <img id="slide-5" src="737.jpeg" alt="Boeing" />
+
+          </div>
+      </div>
+      <div class="slider-nav">
+        <a href="#slide-1"></a>
+        <a href="#slide-2"></a>
+        <a href="#slide-3"></a>
+        <a href="#slide-4"></a>
+        <a href="#slide-5"></a>
+    </div>
+    </section>
+    -->
   </section>
+  
+
+
+
   <section class="contact" id="contact">
     <h2>Get In Touch!</h2>
     <br>
@@ -99,6 +132,21 @@
     <script src="Javascripts/TypeWriter.js"></script>
     <script src="Javascripts/NavBar_Colour.js"></script>
     <script src="Javascripts/Active_NavBar.js"></script>
+    <script src="Projects.js"></script>
+    <script>
+document.querySelectorAll('.slider-nav a').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor scroll
+        const slideId = link.getAttribute('href'); // Get the href (e.g., #slide-1)
+        const slide = document.querySelector(slideId); // Find the target slide
+        if (slide) {
+            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); // Smooth scroll to the slide
+        }
+    });
+});
+
+
+    </script>
   <!-- Section for image -->
 </body>
 </html>
