@@ -11,7 +11,6 @@ html, body {
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
     background-color: transparent;
     scroll-behavior: smooth;
@@ -93,6 +92,8 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+
+
 /* Home Section */
 .home {
     position: relative;
@@ -128,27 +129,86 @@ body {
     padding: 0;
 }
 
-/* About Section */
-.about {
-    min-height: 100vh;
-    padding: 20px 30px;
-    margin-left: 12%;
-    margin-top: 7%;
-    background-color: white;
-    color: black;
-    text-align: left;
-    font-size: 130%;
 
-}
 
 /* Projects Section */
-.projects {
+#projects {
     min-height: 100vh;
     padding: 60px 20px;
-    background-color: rgb(199, 167, 167);
+    background-color: rgb(221, 221, 221);
     color: black;
     text-align: center;
+    position: relative;
+    color: black;
 }
+
+
+.project-container {
+	padding: 2rem;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 8.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #000000;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .linkedin-button {
     display: inline-flex;
@@ -327,10 +387,6 @@ body {
         width: 48%; /* Keep the 2-column layout */
     }
 }
-
-
-
-
 /* Download CV Button */
 #CVButton{
 
@@ -345,42 +401,48 @@ body {
 	font-size: 12px;
 	letter-spacing: 1px;
 	background: #333;
+    margin-top: 20px;
 }
 
-/* Default (for screens larger than 1024px) */
-.about ul section {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Align the content and skills side by side */
+/* About Section */
+.about {
+    min-height: 100vh;
+    padding: 20px 30px;
+    margin-left: 8%;
+    margin-top: 7%;
+    background-color: #ffffff;
+    color: black;
+    text-align: left;
+    font-size: 130%;
+
 }
 
-/* Center the About Me title */
-.about h2 {
-    text-align: left; /* Center the title */
+.about h2{
+    text-align: left;
     width: 100%;
-    margin-bottom: 20px; /* Add space below the title */
+    margin-bottom: 20px;
 }
 
-/* Style for the aboutlist */
-#aboutlist {
-    width: 45%; /* Set width to 45% to leave space for skills section */
-    list-style-type: none; /* Remove default list styling */
-    padding: 0;
-}
-
-#aboutlist li {
-    margin-bottom: 10px; /* Add spacing between the list items */
-}
-
-/* Style for the skills section */
-.skills {
-    width: 50%; /* Skills section will take up 50% of the space */
+.aboutsection{
     display: flex;
-    flex-direction: column; /* Align skills vertically */
-    gap: 20px;
+}
+
+#aboutlist{
+    width: 45%;
+    padding: 0px 10px;
+}
+
+.skills{
+    margin-left: 50px;
+    width: 45%;
+}
+
+.skills .single-progress-item {
+    margin-bottom: 65px; /* Adjust the value to your liking */
 }
 
 /* For screens smaller than or equal to 1024px */
-@media (max-width: 1024px) {
+@media (max-width: 680px) {
     .about {
         flex-direction: column; /* Stack aboutlist and skills vertically */
         align-items: center; /* Center the sections */
@@ -388,6 +450,11 @@ body {
         margin-left: 0%;
         margin-top: 5%;
         font-size: 110%;
+    }
+
+    .aboutsection{
+        display: flex;
+        flex-direction: column;
     }
 
     .about h2{
@@ -402,14 +469,59 @@ body {
     /* Add some margin between the list and skills section */
     .skills {
         margin-top: 30px; /* Space between aboutlist and skills */
+        margin-left: 0px;
+    }
+
+    .skills .single-progress-item {
+        margin-bottom: 50px; /* Adjust the value to your liking */
     }
 
     /* Add margin for the Download CV button */
     #CVButton {
-        margin-top: 20px;
+        margin-top: 0px;
         text-align: center; /* Center the button */
     }
 }
+
+/* Custom cursor styles */
+.cursor {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Cursor animations */
+  .cursor.grow {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+/* Circle styling */
+.circle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: moveAndFade 0.5s ease forwards;
+  }
+  
+  /* Fading and random movement animation */
+  @keyframes moveAndFade {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(calc(-50% + var(--moveX)), calc(-50% + var(--moveY))) scale(0.5);
+    }
+  }
+    
 
 
 .single-progress-item {
@@ -458,10 +570,6 @@ body {
 	        box-shadow: 0 0 10px rgba(45, 45, 45, 0.2);
 }
 
-
-
-
-
 /* Media Queries */
 @media (max-width: 1050px) {
     label.logo {
@@ -472,8 +580,6 @@ body {
     nav ul li a {
         font-size: 16px;
     }
-
-
 }
 
 @media (max-width: 890px) {
