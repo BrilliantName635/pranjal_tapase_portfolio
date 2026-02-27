@@ -142,6 +142,7 @@ body {
     position: relative;
 }
 
+
 .project-title{
     margin-bottom: 50px;
 }
@@ -307,7 +308,7 @@ body {
 .contact {
     min-height: 100vh;
     padding: 60px 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(250, 242, 242);
     color: black;
     text-align: center;
     margin-top: 7%;
