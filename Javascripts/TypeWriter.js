@@ -1,5 +1,5 @@
 const textElement = document.getElementById("text");
-const messages = ["I'm Pranjal.", "Junior Web Designer.", "From India.", "Based in the UK."];
+const messages = ["I'm Pranjal.", "Aspiring Engineer", "Interested in Transport Systems.", "A-Level Student."];
 let messageIndex = 0; // To keep track of the current message
 
 // Function to type out a message
